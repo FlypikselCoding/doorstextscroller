@@ -1,0 +1,137 @@
+# Import
+import time
+import random
+#variables
+knobs = 0
+gold = 0
+firstroompicker = random.randint(1, 2)
+goldcoinpicker = random.choice([5, 10, 25, 50, 75])
+goldcoinadder = gold + goldcoinpicker
+coinprint = str(goldcoinadder)
+#def
+
+def start():
+    print("""
+Welcome to doors.
+Loading...""")
+    time.sleep(3)
+    print("""
+You currently have: """ + str(knobs) + """ knobs. Knobs can be used to purchase items from the in-game shop.""")
+start()
+
+print("""
+You are now inside the hotel's lobby.
+The door you are trying to pass has a lock.
+There is a key behind a counter. Examining closely 
+you find a cart blocking the way. It looks like it
+can be crouched under...""")
+counter = input("""
+How do you get the key?
+1. Jump over the counter.
+2. Crouch under the cart.
+Enter your number.
+""")
+if counter == '1':
+    print("""
+You decide to jump over the counter.
+You grab the key, jump back over the counter, 
+and unlock the door.
+
+Jumping is enabled, and crouching is disabled.""")
+    nojump = False
+if counter == '2':
+    print("""
+You decide to crouch under the cart to get
+to the key. You grab the key, crouch back over
+the counter, and unlock the door.
+
+Jumping is disabled, and crouching is enabled.""")
+    nojump = True
+if firstroompicker == 1:
+    print("""
+You unlock the door, and stumble into the room.
+You are now in: Door 0002.
+As you look around, you see that the room has 
+2 closets and a drawer.
+The door doesnt have a lock. """)
+    examine1 = input("""
+What do you do?
+1. Advance to next door.
+2. Look inside the closets.
+3. Check the drawers.
+Enter your number.
+""")
+    if examine1 == '1':
+        print("""
+""")
+    #closets
+    if examine1 == '2':
+        print("""
+You decide to look inside the closets.
+You open a closet and look inside it. There's 
+nothing inside, so you decide to flip it open 
+and go in, closing the small closet shut.
+
+You start to feel paranoia and a thumping 
+sensation in your chest. This increases until 
+You eventually fall out of the closet, gasping 
+for breath.""")
+        continue2 = input("""
+What do you do?
+1. Advance to next door.
+2. Check the drawers.
+Enter your number.
+""")
+        if continue2 == '1':
+            print("""""")
+        if continue2 == '2':
+            print("""
+You decide to check the drawers. 
+
+The top drawer has a letter sealed with a red button. 
+You open it up, but nothing is inside.
+
+The middle drawer has a container that also 
+seems to have nothing inside it.""")
+            
+            print("""
+The bottom drawer has something special, gold coins!
+You earned """+coinprint+ """ gold coins.""")
+    #drawers
+    if examine1 == '3':
+        print("""
+You decide to check the drawers. 
+
+The top drawer has a letter sealed with a red button. 
+You open it up, but nothing is inside.
+
+The middle drawer has a container that also 
+seems to have nothing inside it.""")
+
+        print("""
+The bottom drawer has something special, gold coins!
+You earned """ +coinprint+ """ gold coins.""")
+        continue1 = input("""
+What do you do?
+1. Advance to next door.
+2. Look inside the closets.
+Enter your number.
+""")
+        if continue1 == '1':
+            print("""""")
+        if continue1 == '2':
+            print("""
+You decide to look inside the closets.
+You open a closet and look inside it. There's 
+nothing inside, so you decide to flip it open 
+and go in, closing the small closet shut.
+
+You start to feel paranoia and a thumping 
+sensation in your chest. This increases until 
+You eventually fall out of the closet, gasping 
+for breath.""")
+if firstroompicker == 2:
+    print("""
+You unlock the door, and stumble into the room.
+You are now in: Door 0002.
+""")
